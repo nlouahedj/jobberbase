@@ -242,9 +242,9 @@
 
 	// translations
 	$smarty->assign('translator', $translator);
-	$smarty->assign('translations', $translations);
+	$smarty->assign('translations', $translator->getTranslations());
 	// create a JSON string from the translations array, but only for the "js" section
-	$smarty->assign('translationsJson', iniSectionsToJSON(array('js' => $translations['js'])));
+	$smarty->assign('translationsJson', iniSectionsToJSON(array('js' => $translator->getTranslations()['js'])));
 	
 	$smarty->assign('THEME', $settings['theme']);
 	$smarty->assign('CURRENT_PAGE', $page);
