@@ -240,9 +240,9 @@
 	$smarty->assign('languages', $translator->getLanguages());
 
 	// translations
-	$smarty->assign('translations', $translations);
+	$smarty->assign('translations', $translator->getTranslations());
 	// create a JSON string from the translations array, but only for the "js" section
-	$smarty->assign('translationsJson', iniSectionsToJSON(array('js' => $translations['js'])));
+	$smarty->assign('translationsJson', iniSectionsToJSON(array('js' => $translator->getTranslations()['js'])));
 	
 	// get job categories and cities
 	$smarty->assign('categories', get_categories());
